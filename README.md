@@ -17,6 +17,9 @@ The goal of this project is to create an interactive visualization of CTA bus ri
   - [Bus Stops](https://data.cityofchicago.org/Transportation/CTA-Bus-Stops/hvnx-qtky)
 - [CTA Employees](https://rtams.org/media/datasets/cta-employees)
 
+# Mockup
+![Screenshot 2024-11-10 at 1 12 06 AM](https://github.com/user-attachments/assets/351308ec-50c3-4746-9571-1a7270665b40)
+
 # Visualization Inspo Examples
 - China Railway Map
   - URL: http://cnrail.geogv.org/enus/station/27270469
@@ -33,6 +36,3 @@ The goal of this project is to create an interactive visualization of CTA bus ri
   - Type: Option A - Core Interactive
   - Description: This dashboard has the option of displaying how tress loss has grown in the past 20 years when the user clicks play. For my project, I want to have a similar function that allows users to see how CTA Bus ridership has fluctuated by bus route since 2001.
   - ![Screenshot 2024-11-10 at 12 49 53 AM](https://github.com/user-attachments/assets/cda9553b-255f-43f5-8af2-f64b1670a024)
-
-# Mockup
-![Screenshot 2024-11-10 at 1 12 06 AM](https://github.com/user-attachments/assets/351308ec-50c3-4746-9571-1a7270665b40)
