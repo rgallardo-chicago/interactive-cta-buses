@@ -4,7 +4,6 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 export function updateGraph(route) {
-  // Load data
   d3.csv('./data/CTA_Bus_Ridership_Monthly.csv').then(data => {
     // Filter data based on selected bus route
     const routeData = data.filter(d => d.route === route);

@@ -37,7 +37,7 @@ export function initializeDropdown(map, geojsonData) {
     // Filter data based on selected year-month
     const filteredData = csvData.filter(d => d.year_month === selectedYearMonth);
 
-    // Create mapping of route::pct_diff values
+    // Create mapping of bus route to pct_diff values
     const routePctDiffMap = {};
     filteredData.forEach(d => {
       routePctDiffMap[d.route] = parseFloat(d.pct_diff);

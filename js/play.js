@@ -63,7 +63,7 @@ export function initializePlay(map, geojsonData) {
           const pctDiff = routePctDiffMap[route] || 0;
           return {
             color: colorScale(pctDiff),
-            weight: 3, // width of bus route lines
+            weight: 3, // width of GeoJSON lines
           };
         },
       }).addTo(map);

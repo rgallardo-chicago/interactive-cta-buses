@@ -17,22 +17,10 @@ The goal of this project is to create an interactive visualization of CTA bus ri
   - [Bus Stops](https://data.cityofchicago.org/Transportation/CTA-Bus-Stops/hvnx-qtky)
 - [CTA Employees](https://rtams.org/media/datasets/cta-employees)
 
-# Mockup
-![Screenshot 2024-11-10 at 1 12 06 AM](https://github.com/user-attachments/assets/351308ec-50c3-4746-9571-1a7270665b40)
+# Draft from Milestone 2
+https://github.com/user-attachments/assets/34cc2bfd-e459-422a-bff8-7679e4804f04
 
-# Visualization Inspo Examples
-- China Railway Map
-  - URL: http://cnrail.geogv.org/enus/station/27270469
-  - Type: Option A - Core Interactive
-  - Description: I'm thinking of a creating a map that allows users to click a bus route. When they click on the bus route, a panel will open that could include general information and a line graph of ridership over time.
-  - ![Screenshot 2024-11-10 at 12 08 33 AM](https://github.com/user-attachments/assets/2cae1a84-f520-4051-9a6f-d259c0adbf50)
-- fastest-bus-analysis-in-the-west
-  - URL: [Visualization](https://public.tableau.com/app/profile/vivek7797/viz/stopsandspeedanalyses/Story1), [Github Repo](https://github.com/vta/fastest-bus-analysis-in-the-west/tree/master?tab=readme-ov-file)
-  - Type: Option A - Core Interactive
-  - Description: The core interactive page that I want to build will be inspired by this map that visualizes bus speed by bus route. Unlike this map, my map will visualize whether the bus route has above or below ridership at a certain point in time compared to the running average. I took the Time Series MPCS course this summer, so I plan to use some knowledge from that class to calculate the average for each day that controls for COVID times. 
-  - ![Screenshot 2024-11-10 at 12 27 02 AM](https://github.com/user-attachments/assets/58eb6237-25e7-4701-9e93-1b7185f5ba2e)
-- Global Forest Watch
-  - URL: [Interactive Map Dashboard](https://gfw.global/4fIfPG2)
-  - Type: Option A - Core Interactive
-  - Description: This dashboard has the option of displaying how tress loss has grown in the past 20 years when the user clicks play. For my project, I want to have a similar function that allows users to see how CTA Bus ridership has fluctuated by bus route since 2001.
-  - ![Screenshot 2024-11-10 at 12 49 53 AM](https://github.com/user-attachments/assets/cda9553b-255f-43f5-8af2-f64b1670a024)
+Users have the ability to choose a Year-Month from the dropdown menu and the color of the bus routes change based on whether the ridership during that month is above, below or the same as the 12-month moving average. Users can also click on a bus route and see the monthly ridership and the moving average of that route graphed. Finally, users can click the play button to see the ridership trends for each month from Jan 2001 to September 2024.
+
+# Original Mockup
+![Screenshot 2024-11-10 at 1 12 06 AM](https://github.com/user-attachments/assets/351308ec-50c3-4746-9571-1a7270665b40)
