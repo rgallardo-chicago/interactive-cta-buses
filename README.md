@@ -1,4 +1,9 @@
 # Name: Ruben Gallardo
+
+# Instructions
+To open the website, enter this repo's directory `interactive-cta-buses` in your local machine  and run the command python3 -m http.server 8000, then open http://localhost:8000/index.html in your browser.
+
+
 # Description
 In May 2024, the [local Chicago news](https://wgntv.com/news/chicago-news/cta-lags-comparable-cities-in-ridership-recovery-staffing-shortage-remains-a-crisis/) reported that the CTA along with New York City's MTA lagged behind other major cities in recovering to pre-pandemic ridership levels. Transit activists and city council blame Carter Dorval, the president of the CTA, for failing to take the necessary measures to speed up the recovery according to reporting by [Block Club Chicago](https://blockclubchicago.org/2024/05/22/resolution-calling-for-cta-presidents-firing-resignation-stalls-despite-support-from-majority-of-council/). The CTA's own [performance dashboard](https://www.transitchicago.com/performance/) tracks ridership levels and other metrics from January 2022 to September 2024. This dashboard shows improvements in performance by the CTA in the past two years, but it doesn't go back far enough so users can compared current performance to pre-pandemic years. 
 
