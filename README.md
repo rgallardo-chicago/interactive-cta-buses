@@ -1,7 +1,7 @@
 # Name: Ruben Gallardo
 
 # Instructions
-To open the website, enter this repo's directory `interactive-cta-buses` in your local machine  and run the command python3 -m http.server 8000, then open http://localhost:8000/index.html in your browser.
+To open the website, enter this repo's directory `interactive-cta-buses` in your local machine  and run the command `python3 -m http.server 8000`, then open http://localhost:8000/index.html in your browser.
 
 
 # Description
