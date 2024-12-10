@@ -10,7 +10,7 @@ The goal of this project is to create an interactive visualization of CTA bus ri
 # Final Project Screenshot
 ![Screenshot 2024-12-10 at 4 05 37 AM](https://github.com/user-attachments/assets/1d8862a5-f30a-4a97-b845-45674036e089)
 
-## Data  Sources
+# Data  Sources
 - [CTA - Ridership - Bus Routes - Daily Totals by Route](https://data.cityofchicago.org/Transportation/CTA-Ridership-Bus-Routes-Daily-Totals-by-Route/jyb9-n7fm/about_data)
 - [CTA Bus Routes](https://data.cityofchicago.org/Transportation/CTA-Bus-Routes-Map/6qfa-9dtu)
 
