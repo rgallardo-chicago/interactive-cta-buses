@@ -1,4 +1,4 @@
-# Chicago Bus Ridership Trends Jan. 2001 to Sept. 2024
+# Chicago Bus Ridership Trends 2001 to 2024
 
 By: Ruben Gallardo
 
