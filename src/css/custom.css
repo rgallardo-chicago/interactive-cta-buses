@@ -1,0 +1,247 @@
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Side Panel Styles */
+#side-panel {
+  width: 600px;
+  min-width: 600px;
+  background-color: #ebebeb;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+/* Title Container */
+.title-container {
+  margin: -10px -10px 20px -10px;
+  padding: 20px;
+  background-color: #A90426;
+  position: relative;
+}
+
+/* Center Website Title */
+.title-container h2 {
+  text-align: center;
+  font-size: 26px;
+  color: white; 
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Author Credit style */
+.author-credit {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: normal;
+  color:  white; 
+  opacity: 0.8;
+}
+
+.author-credit a {
+  color: #41B6E6;
+  text-decoration: none;
+}
+
+.author-credit a:hover {
+  text-decoration: underline;
+}
+
+/* Controls Container */
+#controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Autofill Input Style */
+#year-month-input {
+  padding: 8px;
+  font-size: 14px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#year-month-list {
+  font-size: 14px;
+}
+
+/* Map Styles */
+#map {
+  flex: 1;
+  height: 100%;
+}
+
+/* Graph Container*/
+#graph {
+  width: 550px;
+  height: 400px;
+  margin: 10px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Bus Route Container */
+#bus-route-container {
+  margin: 15px 0;
+}
+
+#bus-route-input {
+  padding: 8px;
+  font-size: 14px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Section Titles */
+#graph-section-title {
+  margin: 15px 0 10px 0;
+}
+
+/* Data Source Section */
+#data-source {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.2;
+}
+
+#data-source a {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+#data-source a:hover {
+  text-decoration: underline;
+}
+
+/* Author Note */
+#author-note {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* Tooltip Style */
+.tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Map Controls Container */
+#map-controls {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Current Date Display */
+#current-date-display {
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: right;
+  pointer-events: none;
+}
+
+/* Play Button Style */
+#play-button {
+  padding: 15px 25px;
+  font-size: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: fit-content;
+}
+
+#play-button:hover {
+  background: #0056b3;
+}
+
+/* Floating Legend Box */
+#floating-legend {
+  position: fixed;
+  top: 90px;
+  right: 40px;
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+#floating-legend h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#floating-legend #color-scale-image {
+  width: 100%;
+  height: 20px;
+  margin: 0 0 15px 0;
+}
+
+#floating-legend #methodology-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#floating-legend #methodology-text p {
+  margin: 10px 0;
+}
+
+#floating-legend #methodology-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+/* Color Classes for Map Legend */
+.color-red {
+  color: #A90426;
+  font-weight: bold;
+}
+
+.color-yellow {
+  color: #d3bd12d0;
+  font-weight: bold;
+}
+
+.color-green {
+  color: #016A38;
+  font-weight: bold;
+}

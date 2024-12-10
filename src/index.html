@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTA Bus Ridership 2001 to 2024</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="./css/custom.css" />
+  <link rel="stylesheet" href="./css/autofill.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Side Panel -->
+  <div id="side-panel">
+
+    <!-- Title and Author Section-->
+    <div class="title-container">
+      <h2>Chicago Bus Ridership</h2>
+      <span class="author-credit">Created by
+        <a href="https://www.linkedin.com/in/rubengallardolopez/" target="_blank">Ruben Gallardo</a> 
+      </span>
+    </div>
+
+    <!-- Map Explanation-->
+    <h3 id="graph-section-title">Map Explanation</h3>
+    <p>The map shows all of Chicago's bus routes. 
+      Playing the animation or searching a specific month and year changes a route's color based on whether ridership that month is above, below, or near the 12-month moving average.
+      The monthly ridership dataset spans from January 2001 to September 2024.
+    </p>
+
+    <!-- Autofill Section with Play Button -->
+    <div id="controls">
+      <label for="year-month-input">Search Month and Year:</label>
+      <input list="year-month-list" id="year-month-input" placeholder="e.g. June 2017" />
+    </div>
+
+    <!-- Bus Route Autofill Section -->
+    <h3 id="graph-section-title">Find a Specific Bus Route</h3>
+    <p><strong>The graph below updates if a specific route is clicked on the map itself or searched in the textbox below</strong>. 
+      Find out if ridership on your favorite bus route is back to pre-pandemic levels or if it already was a ghost of its former glory in April 2020.
+    </p>
+    <div id="bus-route-container">
+      <label for="bus-route-input">Search Route Number:</label>
+      <input list="bus-route-list" id="bus-route-input" placeholder="e.g. 66" />
+    </div>
+
+    <!-- Graph Section -->
+    <div id="graph"></div>
+
+    <!-- Developer Note -->
+    <div id="author-note">
+      <p><strong>Note from Developer:</strong> This project was inspired by the growing threat of climate change and
+        <a href="https://blockclubchicago.org/2024/05/22/citywide-rapid-bus-route-should-come-to-western-avenue-aldermen-say/" target="_blank">
+      renewed efforts</a> to build a Bus Rapid Transit route on Western Avenue (Bus Route Numbers: 49 & X49). 
+      To cut carbon emissions, Chicago needs more buses and less cars on the road. 
+      I hope this map reaches decision makers in Chicago's City Council and those at the CTA to help inform future improvements to the bus system.
+      </p>
+    </div>
+
+    <!-- Data Source Section -->
+    <div id="data-source">
+      <p>
+      Data Source: 
+      <a href="https://data.cityofchicago.org/Transportation/CTA-Ridership-Bus-Routes-Daily-Totals-by-Route/jyb9-n7fm/about_data" target="_blank">
+      Chicago Transit Authority (2024) - Bus Routes Ridership - Daily Totals by Route
+      </a><br>
+      Licensed under a <strong>Limited, Non-Exclusive Developer License Agreement</strong>. Use of this data does not imply any affiliation with or endorsement by the Chicago Transit Authority.
+      </p>
+    </div>
+  </div>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Current Date Display and Play Button Container -->
+  <div id="map-controls">
+    <button id="play-button">Play</button>
+    <div id="current-date-display"></div>
+  </div>
+
+  <!-- Map Legend Container on Map-->
+  <div id="floating-legend">
+    <h3>Map Legend</h3>
+    <img src="./images/color_scale.png" alt="Color Scale" id="color-scale-image" />
+    <div id="methodology-text">
+      <p>The map shows how monthly CTA bus ridership compares to a 12-month moving average for each route.</p>
+      <ul>
+        <li><span class="color-red">Red:</span> Ridership below 12-month average.</li>
+        <li><span class="color-yellow">Yellow:</span> Ridership near 12-month average.</li>
+        <li><span class="color-green">Green:</span> Ridership above 12-month average.</li>
+      </ul>
+      <p>The color scale smoothly transitions from red to green to highlight routes with notable ridership changes. <strong> Click on a specific route in the map to see its ridership trends graphed in the side panel.</strong></p>
+    </div>
+  </div>
+
+  <!-- Leaflet JS Library -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- JS Modules -->
+  <script src="./js/play.js" type="module"></script>
+  <script src="./js/graph.js" type="module"></script>
+  <script src="./js/autofillBusRoutes.js" type="module"></script>
+
+  <!-- App Initialization -->
+  <script type="module">
+    import { initializeAutofill } from './js/autofill.js';
+    import { initializePlay } from './js/play.js';
+    import { initializeBusRouteAutofill } from './js/autofillBusRoutes.js';
+    import { updateGraph } from './js/graph.js';
+
+    const key = '8MxX3tQfbJAxxXCKxTEX';
+
+    // Initialize the map with enough Lake Michigan that legend container is not blocking
+    const map = L.map('map').setView([41.845331, -87.644223], 10.5);
+
+    // Add MapTiler map (dataviz version)
+    L.tileLayer(`https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}.png?key=${key}`, {
+      tileSize: 512,
+      zoomOffset: -1,
+      attribution: `
+        <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> 
+        <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`,
+      crossOrigin: true
+    }).addTo(map);
+
+    // Load GeoJSON bus routes & initialize interactive functionalities
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch('../data/CTA_BUS_ROUTES.geojson')
+        .then(response => response.json())
+        .then(geojsonData => {
+          initializeAutofill(map, geojsonData);
+          initializePlay(map, geojsonData);
+          initializeBusRouteAutofill();
+
+          L.geoJSON(geojsonData, {
+            onEachFeature: (feature, layer) => {
+              if (feature.properties && feature.properties.route) {
+                layer.on("click", () => {
+                  const route = feature.properties.route;
+                  updateGraph(route);
+                });
+              }
+            }
+          }).addTo(map);
+
+          // Default graph Bus Route #6
+          updateGraph("6");
+        })
+    });
+  </script>
+</body>
+</html>
