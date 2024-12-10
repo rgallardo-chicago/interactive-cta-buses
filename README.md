@@ -7,11 +7,11 @@ In May 2024, the [local Chicago news](https://wgntv.com/news/chicago-news/cta-la
 
 The goal of this project is to create an interactive visualization of CTA bus ridership data that goes beyond the dates currently available in the CTA's performance dashboard. I hope this map reaches decision makers in Chicago's City Council and those at the CTA to help inform future improvements to the bus system.
 
-# Final Project Screenshot 
-
+# Final Project Screenshot
+![Screenshot 2024-12-10 at 4 05 37 AM](https://github.com/user-attachments/assets/1d8862a5-f30a-4a97-b845-45674036e089)
 
 ## Data  Sources
 - [CTA - Ridership - Bus Routes - Daily Totals by Route](https://data.cityofchicago.org/Transportation/CTA-Ridership-Bus-Routes-Daily-Totals-by-Route/jyb9-n7fm/about_data)
 - [CTA Bus Routes](https://data.cityofchicago.org/Transportation/CTA-Bus-Routes-Map/6qfa-9dtu)
 
-Licensed under a Limited, Non-Exclusive Developer License Agreement. Use of this data does not imply any affiliation with or endorsement by the Chicago Transit Authority.
+Licensed under a Limited, Non-Exclusive Developer License Agreement. Use of this data does not imply any affiliation with or endorsement by the Chicago Transit Authority. For more details visit [Developer License Agreement & Terms of Use](https://www.transitchicago.com/developers/terms/) on CTA website.
